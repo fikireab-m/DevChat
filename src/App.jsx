@@ -1,13 +1,8 @@
-import Header from "./components/Header"
-import ChatRoom from "./pages/ChatRoom"
-function App() {
-
-  return (
-    <>
-      <Header/>
-      <ChatRoom/>
-    </>
-  )
+import ChatRoom from './pages/ChatRoom';
+function App() {  
+  return <>
+  <ChatRoom />
+  </>
 }
 
-export default App
+export default App;

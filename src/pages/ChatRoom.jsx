@@ -110,7 +110,7 @@ function ChatRoom() {
         <div className="col-span-2">
           <ListOfUsers people={people}/>
         </div>
-        <div className="h-[calc(100vh-100px)] bg-gray-300 col-span-4">
+        <div className="col-span-4">
           <VideoScreen/>
         </div>
         <div className="col-span-2">
