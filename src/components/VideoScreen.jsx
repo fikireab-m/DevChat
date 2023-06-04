@@ -28,7 +28,6 @@
 
 import { useState } from "react";
 import AgoraUIKit, { layout } from "agora-react-uikit";
-import "agora-react-uikit/dist/index.css";
 
 const VideoScreen = () => {
   const [videocall, setVideocall] = useState(true);

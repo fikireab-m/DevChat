@@ -38,11 +38,11 @@ const messages = [
     time: "2022-11-01T12:20:00",
   },
 ];
-function ChatRoom() {
+const ChatRoom=()=> {
   return (
     <>
       <Header />
-      <div className="px-6 pt-14 lg:px-8">
+      <div className="pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
@@ -55,7 +55,7 @@ function ChatRoom() {
             }}
           />
         </div>
-        <div className="lg:grid grid-cols-12 gap-4 mx-auto p-2">
+        <div className="lg:grid grid-cols-12 gap-4 mx-auto px-1">
           {/* <div className="col-span-2">
           <ListOfUsers people={people}/>
         </div> */}
