@@ -8,22 +8,21 @@ const VideoScreen = () => {
   const [isHost, setHost] = useState(true);
   const [isPinned, setPinned] = useState(false);
   const [username, setUsername] = useState("");
-  console.log(APP_ID);
   return (
-    <div className="flex flex-1 w-[calc(75vw)-100px] h-[calc(90vh)]">
+    <div className="mt-2 flex flex-1 w-[calc(75vw)-100px] h-[calc(90vh)]">
       <div style={styles.videoContainer}>
         {videocall ? (
           <>
             <div style={styles.nav}>
-              <p style={{ fontSize: 20, width: 200 }}>
+              <p className="text-md text-white w-[calc(45vw)]">
                 You are {isHost ? "a host" : "an audience"}
               </p>
-              <p style={styles.btn} onClick={() => setHost(!isHost)}>
+              <button style={styles.btn} onClick={() => setHost(!isHost)}>
                 Change Role
-              </p>
-              <p style={styles.btn} onClick={() => setPinned(!isPinned)}>
+              </button>
+              <button style={styles.btn} onClick={() => setPinned(!isPinned)}>
                 Change Layout
-              </p>
+              </button>
             </div>
             <AgoraUIKit
               rtcProps={{
@@ -68,7 +67,13 @@ const styles = {
     flexDirection: "column",
     flex: 1,
   },
-  nav: { display: "flex", justifyContent: "space-around" },
+  nav: {
+    position: "absolute",
+    top: "4rem",
+    zIndex: "20",
+    display: "flex",
+    justifyContent: "space-around",
+  },
   btn: {
     backgroundColor: "#007bff",
     cursor: "pointer",
