@@ -1,6 +1,8 @@
+import { useLocation } from "react-router-dom";
 import ChatsScreen from "../components/ChatScreen";
 import Header from "../components/Header";
 import VideoScreen from "../components/VideoScreen";
+import PropTypes from 'prop-types';
 
 const messages = [
   {
@@ -39,6 +41,10 @@ const messages = [
   },
 ];
 const ChatRoom=()=> {
+  const location = useLocation()
+  const props = location.state.props
+  const user = props.user;
+  const channel = props.channelName;
   return (
     <>
       <Header />
@@ -60,7 +66,7 @@ const ChatRoom=()=> {
           <ListOfUsers people={people}/>
         </div> */}
           <div className="col-span-9">
-            <VideoScreen />
+            <VideoScreen username = {user} channelName = {channel}/>
           </div>
           <div className="col-span-3">
             <ChatsScreen messages={messages} />
@@ -82,5 +88,8 @@ const ChatRoom=()=> {
     </>
   );
 }
-
+ChatRoom.propTypes={
+  user:PropTypes.string.isRequired,
+  channelName:PropTypes.string.isRequired,
+}
 export default ChatRoom;
